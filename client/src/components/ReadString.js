@@ -7,12 +7,11 @@ class ReadString extends React.Component {
     this.state = {
       dataKey: null
     }
-
   }
 
   componentDidMount() {
     const contract = this.context.drizzle.contracts.MyStringStore;
-    
+
     const dataKey = contract.methods["myString"].cacheCall();
 
     this.setState({ dataKey });
