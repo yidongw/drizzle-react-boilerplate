@@ -7,13 +7,12 @@ class ReadString extends React.Component {
     this.state = {
       dataKey: null
     }
-    
+
   }
 
   componentDidMount() {
     const contract = this.context.drizzle.contracts.MyStringStore;
-    // let drizzle know we want to watch `myString` method
-    // todo: will dataKey gets updated?
+    
     const dataKey = contract.methods["myString"].cacheCall();
 
     this.setState({ dataKey });
